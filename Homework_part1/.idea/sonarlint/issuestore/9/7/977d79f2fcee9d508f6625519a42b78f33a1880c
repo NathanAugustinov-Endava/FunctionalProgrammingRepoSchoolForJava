@@ -1,0 +1,27 @@
+
+7
+java:S1643&"Use a StringBuilder instead.(ÈèÇØûÿÿÿÿ
+0
+java:S1220""Move this file to a named package.
+3
+java:S2119K"Save and re-use this "Random".(¼İÅf
+4
+java:S2119W"Save and re-use this "Random".(¥¢Ü
+T	java:S106Ê"9Replace this use of System.out or System.err by a logger.(°è­‡üÿÿÿÿ
+O	java:S106Í"9Replace this use of System.out or System.err by a logger.(ÜêŒõ
+T	java:S106Ğ"9Replace this use of System.out or System.err by a logger.(ŠÃá‡ÿÿÿÿÿ
+T	java:S106Ó"9Replace this use of System.out or System.err by a logger.(ØÎ‹ÿÿÿÿÿÿ
+O	java:S106Ö"9Replace this use of System.out or System.err by a logger.(›÷‰
+O	java:S106×"9Replace this use of System.out or System.err by a logger.(Ïƒ¾
+O	java:S106Ú"9Replace this use of System.out or System.err by a logger.(“½Í‰
+O	java:S106İ"9Replace this use of System.out or System.err by a logger.(äæ…Ü
+T	java:S106à"9Replace this use of System.out or System.err by a logger.(²™Î­şÿÿÿÿ
+N	java:S106ã"9Replace this use of System.out or System.err by a logger.(¿ø³
+O	java:S106æ"9Replace this use of System.out or System.err by a logger.(ú¶Í
+T	java:S106é"9Replace this use of System.out or System.err by a logger.(æ÷Ô ûÿÿÿÿ
+T	java:S106ì"9Replace this use of System.out or System.err by a logger.(ãìåÂüÿÿÿÿ
+O	java:S106î"9Replace this use of System.out or System.err by a logger.(¹Ôöµ
+T	java:S106ú"9Replace this use of System.out or System.err by a logger.(¥¯èäùÿÿÿÿ
+O	java:S106û"9Replace this use of System.out or System.err by a logger.(‡ù
+O	java:S106"9Replace this use of System.out or System.err by a logger.(Ç¥ãÕ
+T	java:S106„"9Replace this use of System.out or System.err by a logger.(™äöûûÿÿÿÿ
