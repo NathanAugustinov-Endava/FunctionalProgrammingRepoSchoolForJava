@@ -51,7 +51,12 @@ public class Pack_4_Streams_Difficult {
 
         long result = 0;
 
-        result = EMPLOYEES.stream().collect(Collectors.groupingBy(employee -> employee.getHomeAddress().getPostCode().substring(0,2), Collectors.toList())).values().stream().filter(employees ->  employees.size() >= 5).count();
+        result = EMPLOYEES.stream()
+                .collect(Collectors.groupingBy(employee -> employee.getHomeAddress().getPostCode().substring(0,2), Collectors.toList()))
+                .values()
+                .stream()
+                .filter(employees ->  employees.size() >= 5)
+                .count();
 
 
         assertThat(result, sameBeanAs(110L));
@@ -66,6 +71,7 @@ public class Pack_4_Streams_Difficult {
                 .flatMap(employee -> Stream.of(employee.getCorrespondenceAddress(),Optional.of(employee.getHomeAddress())))
                 .distinct()
                 .count();
+
         assertThat(result, sameBeanAs(1820L));
     }
 
@@ -78,8 +84,13 @@ public class Pack_4_Streams_Difficult {
         DecimalFormat decimalFormat = new DecimalFormat("£#,###.00");
         List<String> result = null;
 
-        result = EMPLOYEES.stream().collect(Collectors.groupingBy(employee -> employee.getCompany().getName(), HashMap::new,Collectors.summingInt(employee -> employee.getSalary().intValue())))
-                .entrySet().stream().sorted((a,b)->b.getValue() - a.getValue()).map(mapEntry -> mapEntry.getKey() + " - " + decimalFormat.format(mapEntry.getValue())).collect(Collectors.toList());
+        result = EMPLOYEES.stream()
+                .collect(Collectors.groupingBy(employee -> employee.getCompany().getName(), HashMap::new,Collectors.summingInt(employee -> employee.getSalary().intValue())))
+                .entrySet()
+                .stream()
+                .sorted((a,b)->b.getValue() - a.getValue())
+                .map(mapEntry -> mapEntry.getKey() + " - " + decimalFormat.format(mapEntry.getValue()))
+                .collect(Collectors.toList());
 
         assertThat(result, sameBeanAs(asList(
                 "Anglo American - £12,119,153.00",
@@ -106,8 +117,13 @@ public class Pack_4_Streams_Difficult {
         String string = "dog" + "\n" + "bird" + "\n" + "cat" + "\n" + "cat" + "\n" + "dog" + "\n" + "cat";
         List<String> result = null;
 
-        result = Stream.of(string.split("\n")).collect(Collectors.groupingBy(str -> str, HashMap::new, Collectors.counting()))
-                .entrySet().stream().map(entry -> entry.getKey() + " - " + entry.getValue()).sorted((a,b)->a.compareTo(b)).collect(Collectors.toList());
+        result = Stream.of(string.split("\n"))
+                .collect(Collectors.groupingBy(str -> str, HashMap::new, Collectors.counting()))
+                .entrySet()
+                .stream()
+                .map(entry -> entry.getKey() + " - " + entry.getValue())
+                .sorted((a,b)->a.compareTo(b))
+                .collect(Collectors.toList());
 
         assertThat(result, sameBeanAs(asList(
                 "bird - 1",
@@ -143,7 +159,13 @@ public class Pack_4_Streams_Difficult {
         IntStream ints = new Random(0).ints(10);
         int[] result = null;
 
-        result = IntStream.concat(longs.mapToInt(longValue -> (int) longValue),ints).map(value -> Math.abs(value)).sorted().skip(5).limit(10).map(value -> value % 1000).toArray();
+        result = IntStream.concat(longs.mapToInt(longValue -> (int) longValue),ints)
+                .map(value -> Math.abs(value))
+                .sorted()
+                .skip(5)
+                .limit(10)
+                .map(value -> value % 1000)
+                .toArray();
 
         assertThat(result, sameBeanAs(new long[] {106, 266, 402, 858, 313, 688, 303, 137, 766, 896}));
     }
